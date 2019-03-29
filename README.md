@@ -1,10 +1,6 @@
 # eotkd4791.github.io
 
 
-
-IT blog from Stef
-=====================
-
 Welcome to my blog!
 
 
