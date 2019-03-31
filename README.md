@@ -5,4 +5,5 @@ Welcome to my blog!
 
 
 --------------------------------------------
-Please click a link at the top to visit :)
+Do not hesitate to click the link [right here] (https://eotkd4791.github.io/),if you want to visit my blog!
+
