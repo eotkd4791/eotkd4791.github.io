@@ -161,7 +161,7 @@
   @include breakpoint($medium) {
     margin-left: 0; /* override margin*/
     margin-right: 0; /* override margin*/
-    width: span(3 of 12);
+    width: span(10 of 12);
 
     &:nth-child(2n + 1) {
       clear: none;
@@ -428,11 +428,11 @@
   .wide {
   .archive {
     @include breakpoint($large) {
-      padding-right: 0;
+      padding-right: 2;
     }
 
     @include breakpoint($x-large) {
-      padding-right: 0;
+      padding-right: 2;
     }
   }
 }
