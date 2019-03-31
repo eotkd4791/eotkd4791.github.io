@@ -145,7 +145,7 @@
 
   @include breakpoint($small) {
     float: left;
-    width: span(5 of 10);
+    width: span(9 of 10);
 
     &:nth-child(2n + 1) {
       clear: both;
