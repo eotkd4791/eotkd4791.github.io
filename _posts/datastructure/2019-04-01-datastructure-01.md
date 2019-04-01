@@ -71,3 +71,7 @@ _연산이 3번 진행되는 알고리즘이라도 1로 표기한다._
 *1~7번까지 성능에 따라 정리하였다.*
 
 ![](/assets/img/datastructure/tcmp2.jpg)
+
+**참고문헌**
+* 윤성우 [자료구조] Introduction to Data Structures Using C
+* Horowitz·Sahni·Anderson-Freed [C로 쓴 자료구조론] Fundamentals of Data Structures
