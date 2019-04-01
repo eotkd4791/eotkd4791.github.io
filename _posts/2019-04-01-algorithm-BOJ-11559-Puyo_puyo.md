@@ -11,7 +11,7 @@ tags:
 ---
 
 ## [BOJ11559] Puyo puyo
- ☞[[BOJ11559] Puyo puyo](https://boj.kr/11559)
+ ☞[[BOJ11559] Puyo puyo](https://www.acmicpc.net/problem/11559)
 
 ##### keypoint
 x,y좌표와 색깔을 동시에 지정하여 사용하기 위해서 **구조체**를 사용했다. 또한 **BFS로 완전탐색**을 하면서 '.'이 아닌 모든 부분을 탐색했고,
