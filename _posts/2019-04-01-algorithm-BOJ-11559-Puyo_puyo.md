@@ -8,6 +8,8 @@ tags:
   - Simulation
   - BFS
   - Brute Force
+comments:  
+  - true
 ---
 
 ## [BOJ11559] Puyo puyo
