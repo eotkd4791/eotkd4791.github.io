@@ -69,10 +69,5 @@ _연산이 3번 진행되는 알고리즘이라도 1로 표기한다._
 7. O(2ⁿ) : 지수형 빅-오. 사용한다는 것 자체가 비현실적이다.
 
 *1~7번까지 성능에 따라 정리하였다.*
-![](assets/img/datastructure/tcmp2.jpg)
 
-
-
-
-
-[^posts]: Footnote test.
+![](/assets/img/datastructure/tcmp2.jpg)
