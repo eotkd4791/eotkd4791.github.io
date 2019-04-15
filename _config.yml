@@ -82,9 +82,9 @@ yandex_site_verification :
 naver_site_verification  :
 
 # Social Sharing
-twitter: # false (default)
+twitter: 
   username               : 
-facebook: # false (default)
+facebook: 
   username               : 
   app_id                 : 
   publisher              : 
@@ -106,15 +106,15 @@ analytics:
 
 # Site Author
 author:
-  name             : # false (default)
+  name             : Daesang you
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : # false (default)
-  location         : # false (default)
-  email            : # false (default)
+  bio              : 
+  location         : Incheon, South Korea
+  email            :  eotkd4791@gmail.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:
+      # url: mailto: eotkd4791@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://https://eotkd4791.github.io"
