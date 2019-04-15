@@ -83,11 +83,11 @@ naver_site_verification  :
 
 # Social Sharing
 twitter:
-  username               :
-facebook:
-  username               :
-  app_id                 :
-  publisher              :
+  username               : # false (default)
+facebook: # false (default)
+  username               : # false (default)
+  app_id                 : # false (default)
+  publisher              : # false (default)
 og_image                 : # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
@@ -111,7 +111,7 @@ author:
   bio              : #false (default)
   location         : #false (default)
   email            : #false (default)
-  links:
+  links: # false (default)
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: mailto:
@@ -132,7 +132,7 @@ author:
       # url: "https://instagram.com/st2f_you"
 
 # Site Footer
-footer:
+footer: # false (default)
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
