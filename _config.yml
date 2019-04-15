@@ -106,11 +106,11 @@ analytics:
 
 # Site Author
 author:
-  name             : (default)
+  name             : #false (default)
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : (default)
-  location         : (default)
-  email            : (default)
+  bio              : #false (default)
+  location         : #false (default)
+  email            : #false (default)
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
