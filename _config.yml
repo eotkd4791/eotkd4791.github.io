@@ -108,8 +108,8 @@ analytics:
 author:
   name             : "Daesang You"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Stephen<Stef>"
-  location         : "Incheon,South Korea"
+  bio              : "Stephen"
+  location         : "South Korea"
   email            : "eotkd4791@gmail.com"
   links:
     - label: "Email"
