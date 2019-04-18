@@ -1,0 +1,56 @@
+__HTML 실습2__
+
+---
+
+*표를 작성하는 방법을 연습하였다. 행과 열에 데이터를 추가하는 법, 정렬하는 법, 셀을 합치고 나누는 법*
+
+>tr은 행, td는 열의 데이터를 삽입할 때 쓰는 태그이다.
+>>colspan은 열을 늘이는 역할, rowspan은 행을 늘이는 역할을 하는 태그이다.
+>>>align=right이라는 태그를 이용하여 셀마다 왼쪽 정렬을 하였다 이 태그를 쓰지 않으면 셀에서 데이터가 자동으로 오른쪽 정렬된다.
+
+*pre는 내가 입력한 그대로를 화면에 출력해주는 태그이다.*
+
+
+
+![](/assets/img/html/html2.png)
+
+---
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>유대상</title>
+  </head>
+  <body>
+    <pre><h2>                             성 적 표
+	                     유 대 상</h2></pre>
+      <table border="1" style="width:50%">
+        <tr>
+          <th rowspan="2">학번</th> <th rowspan="2">이름</th> <th colspan="3">성적</th>
+        </tr>
+        <tr>
+          <td>국어</td><td>영어</td><td>수학</td>
+        </tr>
+        <tr>
+          <td align=right>1</td> <td>홍길동</td> <td align=right>67</td> <td align=right>77</td> <td align=right>34</td>
+        </tr>
+
+        <tr>
+          <td align=right>2</td> <td>박말순</td> <td align=right>78</td> <td align=right>65</td> <td align=right>34</td>
+        </tr>
+
+        <tr>
+          <td align=right>3</td> <td>윤경아</td> <td align=right>67</td> <td align=right>67</td> <td align=right>56</td>
+        </tr>
+
+        <tr>
+          <td align=right>4</td> <td>김희철</td> <td align=right>90</td> <td align=right>78</td> <td align=right>89</td>
+        </tr>
+
+        <tr>
+          <td align=right>5</td> <td>박순개</td> <td align=right>70</td> <td align=right>70</td> <td align=right>99</td>
+        </tr>
+  </body>
+</html>
+```
