@@ -2,7 +2,7 @@
 
 ---
 
-![](C:\blog\assets\img\Android)
+![](C:\blog\assets\img\Android\imgAnd01.png)
 
 - 안드로이드는 액티비티와 레이아웃 파일이 쌍을 이룬다.
 - Gradle 빌드(배포,개발) 환경을 구성해준다.
@@ -25,7 +25,7 @@
   - 너비와 높이는 꼭 정해준다.
   - 글씨를 보여주는 역할
   - gravity 앱 전체를 기준으로 정렬하기
-  - layout_gravity 부모 기준에서 정렬위치 정하기 
+  - layout_gravity 부모 기준에서 정렬위치 정하기
   - wrap 크기에 맞게 채우기.
 
 
@@ -34,7 +34,7 @@
 ---
 
 - Layout
-- 
+-
     - TextView를 쓰면 많은 것을 담을 수가 없기 때문에 부모로 쓰는 것을 비효율.
 
     - LinearLayout 이나 RelativeLayout을 쓴다.
