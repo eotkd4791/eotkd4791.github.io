@@ -33,27 +33,24 @@
 
 ---
 
+- Layout
+-
+    - TextView를 쓰면 많은 것을 담을 수가 없기 때문에 부모로 쓰는 것을 비효율.
 
-- TextView를 쓰면 많은 것을 담을 수가 없기 때문에 부모로 쓰는 것을 비효율.
-
-- #### LinearLayout 이나 RelativeLayout을 쓴다.
-    - Linear : 요소들이 가로/세로로 배치된다.
-      - 방향은 android:orientation="horizontal" -가로 / vertical 세로
+    - LinearLayout 이나 RelativeLayout을 쓴다.
+      - Linear : 요소들이 가로/세로로 배치된다.
+        - 방향은 android:orientation="horizontal" -가로 / vertical 세로
 
 
-  - #### RelativeLayout : 부모-자식 관계를 지킨다.
+    - RelativeLayout : 부모-자식 관계를 지킨다.
+      - 위치 설정을 따로 하지 않으면 겹쳐서 나타난다.
+      - 1을 센터(부모님의 센터)로 위치 시킨다. layout_centerInParent="true"
+        - 관계를 정의했다고 표현한다.
+      - id를 설정해서 구체적인 위치를 표현한다.android:id=@+id/~~~~
+        - android:layout_toLeftOf="@+id/~~~" // toRightOf
 
-    - 위치 설정을 따로 하지 않으면 겹쳐서 나타난다.
-
-    - 1을 센터(부모님의 센터)로 위치 시킨다. layout_centerInParent="true"
-      - 관계를 정의했다고 표현한다.
-
-    - id를 설정해서 구체적인 위치를 표현한다.android:id=@+id/~~~~
-
-      - android:layout_toLeftOf="@+id/~~~" // toRightOf
-
-  - #### weightSum값을 설정하여 layout_weight명령어를 이용하여 레이아웃을 등분할 수 있다.
-    - wrap_content대신 match_parent를 사용하면 화면을 꽉 채울 수 있다.
+- weightSum값을 설정하여 layout_weight명령어를 이용하여 레이아웃을 등분할 수 있다.
+  - wrap_content대신 match_parent를 사용하면 화면을 꽉 채울 수 있다.
 
 
 ``` xml
@@ -100,10 +97,3 @@
 
 
 ## AndroidStudio-04
-
----
-
->Review
-- 가로세로로 배치하는 것은 LinearLayout
-- 상대적으로 배치하는 것은 RelativeLayout
-- LinearLayout은 부모에 weightSum을 주면 자식이 weight으로 분배해서 비율을 가져감
