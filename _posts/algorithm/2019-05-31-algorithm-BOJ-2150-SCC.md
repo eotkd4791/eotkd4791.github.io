@@ -8,6 +8,9 @@ tags:
   - Graph
   - SCC
   - Strongly Connected Component
+  
+comments:
+  - true
 ---
 
 ## [BOJ2150] Strongly Connected Component
