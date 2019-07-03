@@ -16,7 +16,7 @@ comments:
 ## [BOJ2150] Strongly Connected Component
  [☞ [BOJ2150] Strongly Connected Component](https://www.acmicpc.net/problem/2150)
 
-##### keypoint
+#### keypoint
 >* Stack에 쌓인 노드들을 discover하면서 push하고 return하면서 pop 한다.
 > * forward edge의 경우, tree edge로 간주하고 진행한다.
 > * cross edge의 경우, 내가 탐색하고 있는 노드(w)가 SCC를 이루고 있는지 아닌지의 여부를 판단한다.
