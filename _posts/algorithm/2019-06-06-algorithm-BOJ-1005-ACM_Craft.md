@@ -17,7 +17,7 @@ comments:
 ## [BOJ1005] ACM Craft
  [☞ [BOJ1005] ACM Craft](https://www.acmicpc.net/problem/1005)
 
-##### keypoint
+#### keypoint
 > * DFS/BFS로 위상 정렬를 구현한다.
 > * 위상 정렬된 순서대로 각각의 vertex를 탐색하며 해당 vertex의 indegree가 어느 vertex에서 오는지 저장한다.
 > * 각각의 vertex의 최대가 되는 가중치를 dp table을 쌓아 나간다.
