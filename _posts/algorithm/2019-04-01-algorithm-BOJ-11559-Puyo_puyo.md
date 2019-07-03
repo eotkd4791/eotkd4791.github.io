@@ -15,7 +15,7 @@ comments:
 ## [BOJ11559] Puyo puyo
  ☞[[BOJ11559] Puyo puyo](https://www.acmicpc.net/problem/11559)
 
-##### keypoint
+#### keypoint
 x,y좌표와 색깔을 동시에 지정하여 사용하기 위해서 **구조체**를 사용했다. 또한 **BFS로 완전탐색**을 하면서 '.'이 아닌 모든 부분을 탐색했고,
 *4개 이상의 노드로 이루어져 있지 않다면, 그동안 채워졌던 ep.queue를 모두 pop하여 비워야한다.*
 한 라운드가 끝나면 check배열을 초기화 시켜준다.
