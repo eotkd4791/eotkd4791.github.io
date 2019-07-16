@@ -1,10 +1,10 @@
 ---
-title: "AOJ BOGGLE"
+title: "AOJ PICNIC"
 categories:
   - Algorithm
 tags:
   - Algorithm
-  - Dynamic Programming
+  - Combination
   - Recursive
   - 종만북
 ---
