@@ -1,5 +1,5 @@
 ---
-title: "AndroidStudio01"
+title: "AndroidStudio-Layout"
 categories:
   - AndroidStudio
 tags:
@@ -7,6 +7,7 @@ tags:
   - App
   - layout
 ---
+
 ## AndroidStudio-01
 - 안드로이드는 액티비티와 레이아웃 파일이 쌍을 이룬다.
 - Gradle 빌드(배포,개발) 환경을 구성해준다.
@@ -17,43 +18,35 @@ tags:
 
 
 ## AndroidStudio-02
-- Virtual Device
-  - 단말기에 맞게 설정한다.
-  - Nexus 6 1440x2560px, 560dpi가 요즘 대세.
+1. Virtual Device
+- 단말기에 맞게 설정한다.
+- Nexus 6 1440x2560px, 560dpi가 요즘 대세.
 
-- TextView
-  - match는 꽉 채운다는 뜻.
-  - 너비와 높이는 꼭 정해준다.
-  - 글씨를 보여주는 역할
-  - gravity 해당하는 요소의 범위에서 정렬하기
-  - layout_gravity 부모 기준에서 정렬위치 정하기
-  - wrap 크기에 맞게 채우기.
-
+2. TextView
+- match는 꽉 채운다는 뜻.
+- 너비와 높이는 꼭 정해준다.
+- 글씨를 보여주는 역할
+- gravity 해당하는 요소의 범위에서 정렬하기
+- layout_gravity 부모 기준에서 정렬위치 정하기
+- wrap 크기에 맞게 채우기.
 ---
 
 ## AndroidStudio-03
-
-
-
-- Layout
-
-- TextView를 쓰면 많은 것을 담을 수가 없기 때문에 부모로 쓰는 것을 비효율.
-
+1. TextView를 부모로 쓰면 많은 것을 담을 수가 없기 때문에 비효율.
 - LinearLayout 이나 RelativeLayout을 쓴다.
 - Linear : 요소들이 가로/세로로 배치된다.
 - 방향은 android:orientation="horizontal" 
-  - -가로 / vertical 세로
+- 가로 / vertical 세로
 
-
-- RelativeLayout : 부모-자식 관계를 지킨다.
+2. RelativeLayout : 부모-자식 관계를 지킨다.
 - 위치 설정을 따로 하지 않으면 겹쳐서 나타난다.
 - 1을 센터(부모님의 센터)로 위치 시킨다. layout_centerInParent="true"
 - 관계를 정의했다고 표현한다.
-- id를 설정해서 구체적인 위치를 표현한다.android:id=@+id/~~~~
-- android:layout_toLeftOf="@+id/~~~" // toRightOf
-
+- id를 설정해서 구체적인 위치를 표현한다. 
+- android:id=@+id/~~~~
+- android:layout_toLeftOf="@+id/~~~", toRightOf
 - weightSum값을 설정하여 layout_weight명령어를 이용하여 레이아웃을 등분할 수 있다.
-  - wrap_content대신 match_parent를 사용하면 화면을 꽉 채울 수 있다.
+- wrap_content대신 match_parent를 사용하면 화면을 꽉 채울 수 있다.
 
 
 ```xml
@@ -99,9 +92,8 @@ tags:
 ```
 > centerInparent(부모의 중앙으로 정렬)/  centerInHorizontal(가로 정렬'|')/ centerInVertical(세로 정렬'-')
  toRightOf=id/ toLeftOf / above / below
-
-
 ---
+
 
 ## AndroidStudio-04
 - 이미지 삽입 시 src나 background를 쓰는데 background=@null로 설정하고 src를 이용한다 background는 할당된 공간을 꽉 채우도록 사진을 배치하기 때문에 앱상에서 찌그러질 수 있다.
@@ -116,14 +108,12 @@ support design 종속성 식별자. 입력시 build.gradle(Module.app)내의 디
   원래 사이즈는 device definition에서 사용할 가상머신의 연필그림을 누르고 dpi로 설정해주어야한다.
 - 이미지 설정 시, 백그라운드를 널로 설정해주고 src="@drawble/이미지명"으로 미리 drawable 폴더에 저장해놓았던 파일을 가져온다.
 - 버튼 백그라운드 만들기
-  1. drawble xml파일을 하나 만들고 첫줄만 남긴다.(<xml version~~>)
-  2. <selector xmls:안드로이드 스키마 apk res>태그를 연다
-  3. item 상태설정
-  4. shape 이 상태일 때, 모양이 이렇다.
-  5. 채워 줄때 <solid>
-  6. <corner> 로그인 버튼 둥그렇게 깎아주는 것. 숫자가 적을수록 꺾임이 적다(직각일때 0) radious= 20dp
-   
-
+1. drawble xml파일을 하나 만들고 첫줄만 남긴다.(<xml version~~>)
+2. <selector xmls:안드로이드 스키마 apk res>태그를 연다
+3. item 상태설정
+4. shape 이 상태일 때, 모양이 이렇다.
+5. 채워 줄때 <solid>
+6. <corner> 로그인 버튼 둥그렇게 깎아주는 것. 숫자가 적을수록 꺾임이 적다(직각일때 0) radious= 20dp
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -141,7 +131,9 @@ support design 종속성 식별자. 입력시 build.gradle(Module.app)내의 디
 </selector>
 
 ```
-- EditText입력 시, 힌트 위로 올라가는 디자인.
+
+  
+> EditText입력 시, 힌트 위로 올라가는 디자인.
 ```xml
  <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -153,9 +145,8 @@ support design 종속성 식별자. 입력시 build.gradle(Module.app)내의 디
         </android.support.design.widget.TextInputEditText>
     </android.support.design.widget.TextInputLayout>
 ```
-- 가장자리 조절할 떄는 padding을 쓴다.
-
-- 버튼에 이미지 삽입-> LinearLayout에 버튼과 이미지를 horizontal방식으로 일렬로 배치한다. 버튼 크기를 맞춘다.
+>가장자리 조절할 떄는 padding을 쓴다.<br>
+>버튼에 이미지 삽입-> LinearLayout에 버튼과 이미지를 horizontal방식으로 일렬로 배치한다.<br>버튼 크기를 맞춘다.
 ---
 
 ## AndroidStudio-06
@@ -184,9 +175,11 @@ support design 종속성 식별자. 입력시 build.gradle(Module.app)내의 디
 <!--해당 버튼이 존재하는 레이아웃에 android:enabled="false"입력해준다.
 그러면 2번째 아이템의 색깔이 나온다.-->
 ```
+---
 ## AndroidStudio-07
 **액티비티 활용**
-- EditText에서 값을 가져오고, 로그인 버튼 누르고(.setClickable) 버튼을 클릭했을 때 클릭을 감지하고(setOnCLickListener), 값들을 가져오는(getText) 것 구현
+EditText에서 값을 가져오고, 로그인 버튼 누르고(.setClickable) 버튼을 클릭했을 때 클릭을 감지하고(setOnCLickListener), 값들을 가져오는(getText) 것 구현
+
 ```java
 package com.example.sample;
 
@@ -228,6 +221,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
 ```
+
+---
 ## AndroidStudio-08
+
+---
