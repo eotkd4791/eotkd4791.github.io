@@ -153,24 +153,27 @@ support design 종속성 식별자. 입력시 build.gradle(Module.app)내의 디
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--눌렀을 때-->
    <item android:state_pressed="true">
         <shape android:shape="rectangle">
             <corners android:radius="100dp"/>
             <solid android:color="#ffff00"/>
         </shape>
-   </item> <!--눌렀을 때-->
+   </item> 
+   <!--일반 상태-->
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="100dp"/>
             <solid android:color="@color/colorPrimaryDark"
         </shape>
-    </item><!--일반 상태-->
+    </item>
+    <!--누르고 나서 클릭이 안되게 하는 상태-->
     <item android:state_enabled="false">
         <shape android:shape="rectangle">
             <corners android:radius="100dp"/>
             <solid android:color="#777777"/>
         </shape>
-    </item><!--누르고 나서 클릭이 안되게 하는 상태-->
+    </item>
 </selector>
 <!--해당 버튼이 존재하는 레이아웃에 android:enabled="false"입력해준다.
 그러면 2번째 아이템의 색깔이 나온다.-->
