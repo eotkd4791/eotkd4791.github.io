@@ -8,8 +8,6 @@ tags:
   - layout
 ---
 ## AndroidStudio-01
-![](/assets/img/AndroidStudio/imgAnd01.png)
-
 - 안드로이드는 액티비티와 레이아웃 파일이 쌍을 이룬다.
 - Gradle 빌드(배포,개발) 환경을 구성해준다.
 - res (resource)
