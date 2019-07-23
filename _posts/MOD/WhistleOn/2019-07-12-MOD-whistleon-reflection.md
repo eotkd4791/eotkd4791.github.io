@@ -50,4 +50,4 @@ comments:
 
 ### 다음 할 일
 1. 네비게이션 메뉴에 레이아웃 이동을 구현하는 것은 nav_header에 Linear Layout- Button을 추가하여 버튼 클릭을 구현하는 방식으로 한다.
-2. 그 이외에 나머지 것들을 nav_drawable에 item으로 추가하여 Fragment로 구현한다. 
+2. 그 이외에 나머지 것들을 nav_drawer에 item으로 추가하여 Fragment로 구현한다. 
