@@ -93,3 +93,13 @@ Toast 텍스트 "로그아웃을 완료했습니다" 띄우기.
 ### 보완할 점
 
 ### 다음할 일
+main레이아웃의 네비게이션 바에서 우리팀 매치 일정을 들어가면 텍스트가 겹쳐져서 나타났다.
+* 해결책
+1. MainActivity.java에 addToBackStack추가.
+2. 레이아웃마다 백그라운드를 지정해준다.
+
+* activity_main 
+1. 네비게이션바
+2. app bar main<br>
+
+이렇게 두가지를 포함하고 있으며, 다시 app bar main은 activity_main의 본문 영역을 담당하는 content main을 포함하고 있다.<br> 그러므로 main_activity의 내용을 추가할 때에는 content_main에서 꾸미면 된다.
