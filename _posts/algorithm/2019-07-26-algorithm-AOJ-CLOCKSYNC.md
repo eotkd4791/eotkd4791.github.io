@@ -5,6 +5,7 @@ categories:
 tags:
   - Algorithm
   - DFS
+  - Brute Force
   - Recursive
   - 종만북
 ---
@@ -92,7 +93,7 @@ int main() {
 
 		for (int i = 0; i < 16; i++) {
 			cin >> field[i];
-			if (field[i] == 12)		check[i] = 0;
+			if (field[i] == 12)	check[i] = 0;
 			else if (field[i] == 9) check[i] = 3;
 			else if (field[i] == 6) check[i] = 2;
 			else if (field[i] == 3) check[i] = 1;
