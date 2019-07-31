@@ -134,6 +134,8 @@ support design 종속성 식별자. 입력시 build.gradle(Module.app)내의 디
 
   
 > EditText입력 시, 힌트 위로 올라가는 디자인.
+
+
 ```xml
  <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -150,6 +152,7 @@ support design 종속성 식별자. 입력시 build.gradle(Module.app)내의 디
 ---
 
 ## AndroidStudio-06
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
