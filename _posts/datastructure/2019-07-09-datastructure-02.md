@@ -84,6 +84,7 @@ int main() {
 - 연결 리스트를 이용하여 스택을 구현하였다.
 - head가 최근에 삽입된 노드를 가리키도록 구현하였다.
 #### 구현
+
 ```cpp
 #include <cstdio>
 #include <cstdlib>
