@@ -10,7 +10,6 @@ comments:
 ---
 
 
- {% include RaspberryPi/LED_test.html id="https://www.youtube.com/embed/GCSLqmMmUZ0" %} 
 
 ### #1 도입
  {% include RaspberryPi/LED_test.html id="https://www.youtube.com/embed/GCSLqmMmUZ0" %} 
