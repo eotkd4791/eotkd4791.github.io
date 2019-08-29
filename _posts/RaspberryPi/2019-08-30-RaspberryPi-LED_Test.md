@@ -12,6 +12,7 @@ comments:
 
 
 ### #1 도입
+
  {% include RaspberryPi/LED_test.html id="https://www.youtube.com/embed/GCSLqmMmUZ0" %} 
 
 간단한 LED회로 구성을 하고 파이썬을 이용하여 LED의 깜빡거림을 구현해 보았다.
