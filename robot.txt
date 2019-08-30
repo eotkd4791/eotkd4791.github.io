@@ -1,3 +1,4 @@
 User-agent: *
-Allow: 
+Allow: /
+
 Sitemap: http://eotkd4791.github.io/sitemap.xml
