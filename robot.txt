@@ -1,2 +1,3 @@
 User-agent: *
 Allow: 
+Sitemap: http://eotkd4791.github.io/sitemap.xml
