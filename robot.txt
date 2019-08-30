@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://eotkd4791.github.io/sitemap.xml
+Sitemap: https://eotkd4791.github.io/sitemap.xml
