@@ -11,7 +11,7 @@ tags:
 ---
 
 ## [AOJ] 외발 뛰기 JUMPGAME
- [☞ [AOJ] FENCE](https://www.algospot.com/judge/problem/read/JUMPGAME)
+ [☞ [AOJ] JUMPGAME](https://www.algospot.com/judge/problem/read/JUMPGAME)
 
 
 
