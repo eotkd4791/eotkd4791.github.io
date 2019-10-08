@@ -1,9 +1,9 @@
 ---
-title: "BOJ10866 덱"
+title: "덱 Deque"
 categories:
-  - data structure
+  - Data structure
 tags:
-  - data structure
+  - Data structure
   - Deque
 comments:
   - true

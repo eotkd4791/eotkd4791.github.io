@@ -1,11 +1,11 @@
 ---
-title: "Priority Queue"
+title: "우선순위 큐(힙 Heap) Priority Queue"
 categories:
-  - data structure
+  - Data structure
 tags:
-  - data structure
-  - heap
-  - priority queue
+  - Data structure
+  - Heap
+  - Priority queue
 comments:
   - true
 ---

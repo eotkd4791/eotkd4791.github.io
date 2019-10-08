@@ -1,9 +1,9 @@
 ---
 title: "병합 정렬 Merge Sort"
 categories:
-  - data structure
+  - Data structure
 tags:
-  - data structure
+  - Data structure
   - Merge Sort
 comments:
   - true

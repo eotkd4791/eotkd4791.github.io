@@ -1,10 +1,10 @@
 ---
 title: "알고리즘 성능 분석"
 categories:
-  - data structure
+  - Data structure
 tags:
   - Data structure
-  - study
+  - Study
   - Theory
   - 공간 복잡도
   - 시간 복잡도

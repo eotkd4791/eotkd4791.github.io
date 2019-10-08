@@ -1,10 +1,10 @@
 ---
-title: "스택"
+title: "스택 Stack"
 categories:
-  - data structure
+  - Data structure
 tags:
   - Data structure
-  - study
+  - Study
   - Theory
   - Stack
   - 스택

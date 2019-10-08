@@ -1,10 +1,10 @@
 ---
-title: "트리 순회"
+title: "트리 순회 Tree Traversal"
 categories:
-  - data structure
+  - Data structure
 tags:
   - Data structure
-  - study
+  - Study
   - Theory
   - Tree
   - Preorder
