@@ -1,5 +1,5 @@
 ---
-title: "우선순위 큐(힙 Heap) Priority Queue"
+title: "우선순위 큐 (힙 Heap) Priority Queue"
 categories:
   - Data structure
 tags:
