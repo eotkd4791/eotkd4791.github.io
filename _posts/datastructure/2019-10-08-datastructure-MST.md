@@ -35,15 +35,100 @@ comments:
 
 ### 프림 알고리즘 Prim's Algorithm
 
-1. 동작 원리 : 시작하는 노드에서 연결된 노드에서 연결된 모든 간선 중에 가중치가 가장 작은 간선을 선택하여 간선의 갯수가 노드의 갯수 - 1이 될 때까지 반복한다.
+1. 동작 원리 : 시작하는 노드에서 연결된 노드에서 연결된 모든 간선 중에 가중치가 가장 작은 간선을 선택하여 간선의 갯수가 노드의 갯수 - 1이 될 때까지 반복한다. 우선순위 큐를 이용하면 간편하게 구현할 수 있다.
 
 2. 시간 복잡도 : 노드의 수 n만큼 반복하고, 가중치가 가장 작은 간선을 찾을 때의 반복횟수 = 노드의 갯수 n만큼 반복한다. 따라서 시간 복잡도는 O(n²)가 된다.
+
+
+> 연습 예제  [BOJ1922 네트워크 ](boj.kr/1922)
+
+```cpp
+//Prim's Algorithm
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <utility>
+#include <functional>
+using namespace std;
+
+int n, m;
+vector<vector<pair<int, int> > > v;
+bool check[1001];
+typedef struct { int node; int val; }edge;
+bool operator<(edge a, edge b) { return a.val > b.val; }
+// 정렬 기준 -> 가중치가 낮은 간선에 우선순위를 둔다.
+
+int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0); cout.tie(0);
+
+	priority_queue <edge> h;
+
+	cin >> n >> m;
+	v.resize(n + 1);
+
+	int a, b, c;
+	for (int i = 0; i < m; i++) {
+		cin >> a >> b >> c;
+		v[a].push_back(make_pair(b, c));
+		v[b].push_back(make_pair(a, c));
+	}
+
+	check[1] = 1;
+	for (int i = 0; i < v[1].size(); i++)
+		h.push({ v[1][i].first, v[1][i].second });
+
+	int edge = 1; int sum = 0;
+	while (edge <= n - 1) { 
+        //스패닝 트리를 만들 때 최소가 되는 간선의 갯수 = 노드의 갯수 n-1
+
+		if (check[h.top().node]) {
+			h.pop();
+			continue;
+		}
+
+		int idx = h.top().node;
+		sum += h.top().val;
+		edge++;
+		h.pop();
+		check[idx] = 1;
+
+		for (int i = 0; i < v[idx].size(); i++) {
+
+			if (check[v[idx][i].first])
+				continue;
+
+			else
+				h.push({ v[idx][i].first, v[idx][i].second });
+		}
+	}
+	cout << sum;
+	return 0;
+```
 
 ---
 
 ### 크루스칼 알고리즘 Kruskal's Algorithm
-1. 크루스칼 알고리즘 Ⅰ Kruscal's Algorithm
--> 가중치를 오름차순으로 정렬하고, 가중치가 '작은 값'부터 '삽입'한다.
 
-2. 크루스칼 알고리즘 Ⅱ Kruscal's Algorithm
+1. 동작 원리
+크루스칼 알고리즘 Ⅰ Kruscal's Algorithm
+-> 가중치를 오름차순으로 정렬하고, 가중치가 '작은 값'부터 '삽입'한다.
+<br><br>
+-> 간선들을 가중치의 오름차순으로 정렬하고, 낮은 가중치부터 선택한다. 이때, 사이클을 형성하는 간선은 제외한다.
+<br><br>
+크루스칼 알고리즘 Ⅱ Kruscal's Algorithm
 -> 가중치를 내림차순으로 정렬하고, 가중치가 '큰 값'부터 '삭제'한다.
+<br><br>
+-> 간선들을 가중치의 내림차순으로 정렬하고, 큰 가중치부터 삭제한다.
+
+> __유의 사항__
+> 간선을 추가할 때 사이클이 만들어지는지를 확인해야 한다. 새로운 간선이 이미 다른 경로에 포함되어 있는 노드들을 연결할 때 사이클이 만들어진다.
+
+
+> __사이클 생성 여부 확인하는 법__
+> 추가할 새로운 간선 양 끝의 정점이 같은 집합에 속해 있으면 사이클이 형성되기 때문에 이 부분을 먼저 검사한다.
+> Union find 알고리즘을 이용한다.
+
+2. 시간 복잡도 : 간선의 갯수 E개를 정렬하는 데 O(E logE) 만큼의 시간이 든다.
+
+> 간선의 갯수가 적으면 "크루스칼 알고리즘", 많으면 "프림 알고리즘"이 적합하다.
