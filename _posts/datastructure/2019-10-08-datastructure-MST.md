@@ -52,7 +52,7 @@ comments:
 using namespace std;
 
 int n, m;
-vector<vector<pair<int, int> > > v;
+vector<vector<pair<int, int> > > v; //인접리스트와 가중치를 저장.
 bool check[1001];
 typedef struct { int node; int val; }edge;
 bool operator<(edge a, edge b) { return a.val > b.val; }
@@ -70,7 +70,7 @@ int main() {
 	int a, b, c;
 	for (int i = 0; i < m; i++) {
 		cin >> a >> b >> c;
-		v[a].push_back(make_pair(b, c));
+		v[a].push_back(make_pair(b, c)); 
 		v[b].push_back(make_pair(a, c));
 	}
 
