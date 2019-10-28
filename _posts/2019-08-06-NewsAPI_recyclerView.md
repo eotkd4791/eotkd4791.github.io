@@ -16,7 +16,10 @@ comments:
 ## 1. 라이브러리 추가하기
 - build.gradle(Module.app)
 - dependencies에 리사이클러뷰, 카드뷰, 프레스코, 발리를 추가한다.
-```gradle
+  1. Fresco (프레스코) : 안드로이드 애플리케이션에 이미지를 표시하는 라이브러리, 이미지 로딩과 출력을 처리하기 때문에 생산성을 향상시킬 수 있다.
+  2. Volley는 웹 요청과 응답을 단순화시키기 위해 만들어진 라이브러리이다. Request 객체를 만들고 이 객체를 Request Queue에 넣어주면 Request Queue는 알아서 웹 서버에 요청하고 응답을 받는다. Http 클라이언트 라이브러리가 제공하는 기능을 대부분 제공하한다. 동시에 여러 네트워크 요청을 할 수 있다.
+
+```
 dependencies {
  'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
@@ -180,7 +183,7 @@ public class RecyclerviewActivity extends AppCompatActivity {
                                 news.add(newsData);
                             }
 
-                            //데이터를 NewsData에서 분류한다.
+                            //데이터를 NewsData클래스에서 분류한다.
                             mAdapter = new MyAdapter(news, RecyclerviewActivity.this);//받아온 입력값을 MyAdapter자바 파일의 #5부분으로 전달하는 코드
                             //fresco설정 시에 RecyclerviewActivity.this를 추가하여 준다. #6
 
