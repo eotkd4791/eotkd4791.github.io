@@ -31,6 +31,8 @@ dependencies {
 ## 2. 레이아웃 구성하기
 
 - 하나의 리사이클러뷰를 보여주는 레이아웃
+
+
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -95,6 +97,8 @@ dependencies {
 ```
 
 - 리사이클러뷰에 들어갈 항목을 보여준다.
+
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
