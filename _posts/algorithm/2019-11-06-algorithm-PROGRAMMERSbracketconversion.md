@@ -154,7 +154,7 @@ string solution(string p) {
         if(left==right){ //왼쪽 괄호와 오른쪽 괄호의 수가 같다면
             if(!isright){//올바른 문자열이 아니라면
                 answer+='(';
-                answer+=solution(p.substr(i+1, p.size()-i-1)); ->v를 인자로 재귀함수를 호출한다.
+                answer+=solution(p.substr(i+1, p.size()-i-1)); //v를 인자로 재귀함수를 호출한다.
                 answer+=')';
                 
                 for(int j=1; j<i; ++j){ 
