@@ -48,6 +48,7 @@ comments:
 using namespace std;
 
 bool isright(string str)
+//스택을 이용하여 "올바른 문자열인지 아닌지를 검사하는 함수
 {
 	if (str == "")
 		return true;
@@ -118,9 +119,9 @@ string recur(string s) {
 }
 
 string solution(string p) {
-	if (isright(p))
+	if (isright(p)) //문자열 p가 올바른지 검사한다.
 		return p;
-	else
+	else // 올바르지 않다면 문자열 p를 인자값으로 하는 재귀함수를 호출한다.
 	{
 		string answer = recur(p);
 		return answer;
@@ -128,3 +129,49 @@ string solution(string p) {
 }
 ```
 
+#### 개선한 코드
+
+```cpp
+#include <string>
+using namespace std;
+
+string solution(string p) {
+    string answer="";
+    if(p=="") //빈 문자열이면 그대로 리턴한다.
+        return p;
+    
+    int left=0; int right=0;
+    bool isright=true; //올바른 문자열이면 true, 아니면 false
+    for(int i=0; i<p.size(); ++i){
+        if(p[i]=='(')
+            left++;
+        else
+            right++;
+        //// 왼쪽 괄호, 오른쪽 괄호 각각의 갯수를 센다.
+        if(left<right) //오른쪽 괄호가 많이지는 순간이 존재하면 그것은 올바른 괄호 문자열이 아니라는 뜻이다.
+            isright=false;
+
+        if(left==right){ //왼쪽 괄호와 오른쪽 괄호의 수가 같다면
+            if(!isright){//올바른 문자열이 아니라면
+                answer+='(';
+                answer+=solution(p.substr(i+1, p.size()-i-1)); ->v를 인자로 재귀함수를 호출한다.
+                answer+=')';
+                
+                for(int j=1; j<i; ++j){ 
+                    //문자열 u의 양 끝 괄호를 제거하고 나머지 괄호를 반대로 바꾸어 answer변수에 추가한다.
+                    if(p[j]=='(')
+                        answer+=')';
+                    else
+                        answer+='(';
+                }
+                return answer;
+            }
+            else{//올바른 문자열이라면
+                answer += p.substr(0, i + 1); //answer변수에 문자열 u를 더하고
+				answer += solution(p.substr(i + 1, p.length() - i - 1)); //v를 인자로 하는 재귀함수를 호출한다.
+				return answer;
+            }
+        }
+    }
+}
+```
