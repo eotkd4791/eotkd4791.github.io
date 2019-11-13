@@ -1,9 +1,9 @@
 ---
 title: "AndroidStudio-Layout"
 categories:
-  - AndroidStudio
+  - Android
 tags:
-  - AndroidStudio
+  - Android
   - App
   - layout
 ---
