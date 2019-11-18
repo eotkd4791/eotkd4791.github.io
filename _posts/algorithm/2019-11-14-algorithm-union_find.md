@@ -1,9 +1,10 @@
 ---
 title: "유니온 파인드 Union-Find"
 categories:
-  - Java
+  - Algorithm
 tags:
-  - Java
+  - Union-Find
+  - Disjoint_Set
 ---
 
 ### 유니온 파인드(Union-Find)란?
