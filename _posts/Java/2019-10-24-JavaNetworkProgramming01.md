@@ -1,7 +1,6 @@
 ---
 title: "JAVA Network Programming 01"
 categories:
-  - Network
   - Java
 tags:
   - Network
