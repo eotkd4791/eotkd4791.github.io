@@ -318,6 +318,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 
 - 데이터 분류 용도
+
+
 ```java
 package com.example.recyclerviewpractice1;
 
