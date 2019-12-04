@@ -1,0 +1,218 @@
+---
+title: "JavaScript 프로토타입"
+categories:
+  - JavaScript
+tags:
+  - JavaScript
+---
+
+### 프로토타입 체이닝으로 클래스 구현하기
+
+#### 클래스란?
+
+- 인스턴스란 클래스의 속성을 지닌 객체이다.
+
+- 구체적인 특성을 지닌 인스턴스를 포함하는 추상적인(덜 구체적인, 포괄적인) 개념이 클래스이다.
+
+- 포괄적인 상위 클래스가 먼저 정의되어야 비교적 덜 포괄적인(상위 클래스보다 더 구체적인) 하위 클래스를 정의할 수 있다.
+
+- 배열 객체를 예로 들면 Array라는 생성자 함수는 그 자체로 어떤 특별한 역할을 수행하기 보다는 new연산자를 통해 생성한 배열 객체들의 기능을 정의하는 데에 주력하고 있기 때문이다.
+
+- 배열 객체의 프로토타입에 할당되어있지 않고, 배열 자체에 할당되어 있는 프로퍼티들을 static methods // static properties라고 한다.
+
+- 이들은 new연산자 없이 일급 객체인 함수를 호출할 때에만 의미가 있는 값들이다. 소속 여부의 확인, 소속 부여 등의 공동체적인 판단을 필요로 하는 경우에 쓰인다.
+
+- 프로토타입에 정의된 메소드는 프로토타입 메소드라고 하는데 생략해서 메소드라고만 부르는 경우가 많다.
+
+- static methods/static properties와 prototype methods는 인스턴스에서 접근이 가능한지의 여부가 다르다. 인스턴스에서 프로토타입 프로퍼티는 인스턴스와 __proto__와 연결되어있고, __proto__는 생략이 가능하기 때문에 클래스의 프로토타입으로 직접 접근이 가능하지만, 스태틱 메소드/프로퍼티로의 직접 접근은 불가능하다. prototype의 constructor를 통해 우회하면 가능하지만 this를 해당 인스턴스로 설정하기 위해서는 별도의 처리가 필요하며 이러한 처리 후에도 정상적인 동작을 기대하기는 어렵다.
+
+```js
+function Person(name, age) {
+    this._name = name;
+    this._age = age;
+}
+//static
+Person.getInformations = function(instance) {
+    return {
+        name: instance._name,
+        age: instance._age
+    };
+}
+
+//prototype
+Person.prototype.getName = function() {
+    return this._name;
+}
+//prototype
+Person.prototype.getAge = function() {
+    return this._age;
+}
+
+
+var daesang = new Person('대상', 27);
+
+console.log(daesane.getName()); //ok
+console.log(daesang.getAge()); //ok
+
+console.log(daesang.getInformations(daesang)); //err
+//getinformation은 daesang인스턴스에 존재하지 않기 때문에 에러가 발생한다.
+//프로토타입 체이닝은 대각선으로(__proto__ -> prototype) 검색하기 때문이다.
+
+//따라서 static메소드에서 제대로된 결과를 얻기 위해서는
+console.log(Person.getInformations(daesang));
+//다음과 같이 인스턴스가 아니라 생성자 함수에서 직접 접근해야한다.
+```
+ 
+ ### 클래스 상속
+
+ ```js
+function Person(name, age) {
+    this.name = name || '이름없음';
+    this.age = age || '나이모름';
+}
+
+Person.prototype.getName = function() {
+    return this.name;
+}
+Person.prototype.getAge = function() {
+    return this.age;
+}
+
+function Employee(name, age, position) {
+    this.name = name || '이름없음';
+    this.age = age || '나이모름';
+    this.position = position || '직책모름';
+}
+Employee.prototype.getName = function() {
+    return this.name;
+}
+Employee.prototype.getAge = function() {
+    return this.age;
+}
+Employee.prototype.getPosition = function() {
+    return this.position;
+}
+
+/* 중복되는 메소드가 있다.(getName, getAge)
+---------------------------------------*/
+
+function Person(name, age) {
+    this.name = name || '이름없음';
+    this.age = age || '나이모름';
+}
+Person.prototype.getName = function() {
+    return this.name;
+}
+Person.prototype.getAge = function() {
+    return this.age;
+}
+
+function Employee(name, age, position) {//생성자함수
+    this.name = name || '이름없음';
+    this.age = age || '나이모름';
+    this.position = position || '직책모름';
+}
+Employee.prototype = new Person();
+//Employee.prototype을 Person의 인스턴스로 대체
+Employee.prototype.constructor = Employee;
+//Employee.prototype이 본래의 기능을 갖도록 constructor프로퍼티에 자기자신을 담는다.
+
+//prototype 객체에 constructor프로퍼티를 생성해주는 특성을 이용한다.
+//constructor에는 생성자 함수가 담겨있으므로 자기자신으로 대체해서 
+//Employee를 new연산자로 생성할 때, Employee가 생성되도록 한다.
+Employee.prototype.getPosition = function() {
+    return this.position;
+}
+
+/* 위의 코드에서는 name이나 age의 값을 정의하지 않으면 '이름없음/나이 모름' 이라는 내용이 출력된다. 정의되지 않았음을 의미하는 undefined를
+출력하고 프로토타입 체이닝에서 불필요한 부분이 등장하지 않게 하기 위해서
+어떤 프로퍼티도 가지지 않으며 코드에 전혀 영향을 주지 않는 Bridge함수를 이용한다.
+
+우리에게 필요한 것은 각 클래스의 프로토타입을 __proto__로 내려받는
+무언가이다. 반드시 Person의 인스턴스가 필요한 것이 아니다.
+Person.prototype을 상속받는 별도의 인스턴스가 있고, 그 객체에는 아무런 프로퍼티도 존재하지 않으면 우리가 원하는 것을 이뤄낼 수 있다.
+-----------------------------------------------------*/
+
+function Person(name, age) {
+    this.name = name || '이름없음';
+    this.age = age || '나이모름';
+}
+
+Person.prototype.getName = function() {
+    return this.name;
+}
+Person.prototype.getAge = function() {
+    return this.age;
+}
+
+function Employee(name, age, position) {
+    this.name = name || '이름없음';
+    this.age = age || '나이모름';
+    this.position = position || '직책모름';
+}
+
+function Bridge() {}
+Bridge.prototype = Person.prototype;
+Employee.prototype = new Bridge();
+Employee.prototype.constructor = Employee;
+
+/* 위의 코드를 보면 Bridge함수는 어떤 프로퍼티도 생성하지
+않는 비어있는 생성자 함수. Bridge함수를 이용하여 Person과
+Employee의 연결관계를 끊음으로써 name,age와 같은 불필요한
+프로퍼티가 프로토타입 체인상에 등장하지 않도록 했다.
+-------------------------------------------*/
+
+//Bridge함수는 ES5에서 클로저를 활용해서 함수로 구현하여
+//단 한번만 생성해서 재사용하도록 권장한다.
+//Super와 Sub로 쓰일 함수들을 매개변수로 넘겨준다.
+
+var extendClass = (function() {//함수 정의
+    function Bridge() {}
+    return function(Parent, Child) {
+        Bridge.prototype = Parent.prototype;
+        Child.prototype = new Bridge();
+        Child.prototype.constructor = Child;
+    }
+})();
+extendClass(Person, Employee); //함수 호출
+Employee.prototype.getPosition = function() {
+    return this.position;
+}
+
+/*위의 함수를 이용하면 name,age라는 중복된 프로퍼티도 
+수정할 수 있다. 아래 코드를 보자.
+--------------------------------------------*/
+
+var extendClass = (function() {
+    function Bridge() {}
+    return function(Parent, Child) {
+        Bridge.prototype = Parent.prototype;
+        Child.prototype = new Bridge();
+        Child.prototype.constructor = Child;
+        Child.prototype.superClass = Parent; //##
+    }
+})();
+
+function Person(name, age) {
+    this.name = name || '이름없음';
+    this.age = age || '나이모름';
+}
+
+Person.prototype.getName = function() {
+    return this.name;
+}
+Person.prototype.getAge = function() {
+    return this.age;
+}
+
+function Employee(name, age, position) {
+    this.superClass(name,age); //##
+    this.position = position || '직책모름';
+}
+
+extendClass(Person, Employee); 
+Employee.prototype.getPosition = function() {
+    return this.position;
+}
+```
+
