@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* Colors */
-$background-color: rgb(44, 44, 44) !default;
+$background-color: rgb(19, 18, 18) !default;
 $text-color: #fff !default;
 // $muted-text-color: $text-color !default;
 $primary-color: #e20000f8 !default;
@@ -11,7 +11,7 @@ $border-color: mix(#fff, $text-color, 75%) !default;
 $footer-background-color: rgb(26, 24, 24) !default;
 $link-color: #6d0000 !default;
 $masthead-link-color: $text-color !default;
-$masthead-link-color-hover: $text-color !default;
+$masthead-link-color-hover: #000 !default; //$text-color
 $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
 
 /* contrast syntax highlighting (base16) */
