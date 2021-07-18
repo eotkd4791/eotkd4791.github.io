@@ -296,3 +296,5 @@ defaults:
     values:
       layouts: single
       author_profile: true
+
+theme: jekyll-theme-cayman
