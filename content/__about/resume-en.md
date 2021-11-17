@@ -4,10 +4,33 @@ date: 2019-1-27 16:21:13
 lang: 'en'
 ---
 
-# Your name
+# Daesang You
+
+### \# Introduction
+
+### \# Skillset
+
+### \# Info
 
 <div align="center">
 
-_Thank you for reading my resume. If you want to contact me, Please send me an email._
+|          |                |          |                         |
+| :------: | :------------: | :------: | :---------------------: |
+|   name   |   **유대상**   |  email   | **eotkd4791@gmail.com** |
+| birthday | **1993.01.30** | location |        **인천**         |
 
 </div>
+
+### \# Experience
+
+- 2020.10 ~ 2021.08 **주식회사 버블콘** 프론트엔드 개발 담당
+- 2020.02 ~ 2020.02 **삼성 SDS 대학생** 알고리즘 특강 수료
+- 2019.03 ~ 2019.06 **가톨릭대학교 컴퓨터** 공학부 강의 청강
+  - 알고리즘 설계 - 박정흠 교수님
+  - 웹서비스컴퓨팅 - 김백현 교수님
+- 2017.06 ~ 2018.06 호주 워킹홀리데이 (Perth, WA, Australia)
+  - 2017.06 ~ 2017.08 **Great Southern Hotel** - `객실 청소`
+  - 2017.08 ~ 2017.12 **WMPG WCS** - `포장,상차`
+  - 2018.01 ~ 2018.06 **Tropical Colours Pty Ltd** - `포장,검역,배달`
+- 2011.03 ~ 2019.02 **상지대학교** 응용물리전자학과 졸업
+  - 학점: 3.56 / 4.5

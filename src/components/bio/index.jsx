@@ -9,7 +9,7 @@ export const Bio = () => (
     query={bioQuery}
     render={data => {
       const { author, social, introduction } = data.site.siteMetadata
-
+      console.log(data)
       return (
         <div className="bio">
           <div className="author">
@@ -67,7 +67,7 @@ export const Bio = () => (
 
 const bioQuery = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile.png/" }) {
+    avatar: file(absolutePath: { regex: "/stef.png/" }) {
       childImageSharp {
         fixed(width: 72, height: 72) {
           ...GatsbyImageSharpFixed
