@@ -1,0 +1,14 @@
+{
+  "name": "dev-sigh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "post": "markdown-tistory write"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "stef",
+  "license": "ISC"
+}
