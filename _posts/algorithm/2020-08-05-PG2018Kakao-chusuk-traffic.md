@@ -1,5 +1,5 @@
 ---
-title: "프로그래머스 추석트래픽(JS)"
+title: '프로그래머스 추석트래픽(JS)'
 categories:
   - Algorithm
 tags:
@@ -9,9 +9,7 @@ comments:
   - true
 ---
 
-
 [추석트래픽](https://programmers.co.kr/learn/courses/30/lessons/17676)
-
 
 ## 풀이
 
@@ -25,7 +23,6 @@ comments:
 
 코드를 통해 자세히 살펴보자.
 
-
 ```js
 function solution(lines) {
   let ans = 0;
@@ -34,40 +31,41 @@ function solution(lines) {
   /* 주어진 문자열 파싱
   ------------------------------------------*/
 
-  lines.forEach(v => {
+  lines.forEach((v) => {
     const date = v.split(' ');
     const time = date[1].split(':');
     const mil = parseFloat(date[2].substr(0, date[2].length - 1)) * 1000;
 
     let s = 3600;
     let sec = 0;
-    time.forEach(t => {
+    time.forEach((t) => {
       sec += parseFloat(t) * s * 1000;
       s /= 60;
     });
     arr.push([sec - mil + 1, sec]); // [ 요청 발생 시간, 요청에 대한 응답 완료시간  ]
   });
 
-
   /* 알고리즘 부분
   ------------------------------------------*/
   arr.sort((a, b) => (a[0] < b[0] ? -1 : 1)); // 요청 발생시간 기준 오름차순 정렬.
 
-  const pq = [];  //우선순위 큐
+  const pq = []; //우선순위 큐
 
   let time = arr[0][0]; // 1초 범위 계산시 기준
 
-  for (let v of arr) { // 요청의 발생, 완료 시간이 담긴 배열 순회.
+  for (let v of arr) {
+    // 요청의 발생, 완료 시간이 담긴 배열 순회.
 
-    if (time + 999 < v[0]) { //1초 범위를 벗어난다면 해당 조건문에 입장, 1초 범위 내에 있다면 조건문을 수행하지 않고 pq에 완료시간 삽입.
+    if (time + 999 < v[0]) {
+      //1초 범위를 벗어난다면 해당 조건문에 입장, 1초 범위 내에 있다면 조건문을 수행하지 않고 pq에 완료시간 삽입.
 
-      while (pq[0] + 999 < v[0] && pq.length > 0) pq.shift(); 
+      while (pq[0] + 999 < v[0] && pq.length > 0) pq.shift();
       //pq의 값중 우선순위가 가장 높은 값(응답 완료시간이 가장 높은 값)을 기준으로 1초 범위 내에 벗어나는 값들을 제거한다.
 
       time = pq.length === 0 ? v[0] : pq[0];
       // pq 내부에 값이 남아있다면 그 값들중 가장 우선순위가 높은 값으로, pq가 비어있다면 현 시점 바라보고 있는 요청의 발생시간을 삽입한다.
     }
-    const newIdx = pq.findIndex(i => i > v[1]);
+    const newIdx = pq.findIndex((i) => i > v[1]);
     // 우선순위 큐에 값을 삽입하기 위해서 위치를 찾는다.
 
     pq.splice(newIdx === -1 ? pq.length : newIdx, 0, v[1]);

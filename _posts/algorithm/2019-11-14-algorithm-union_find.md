@@ -1,5 +1,5 @@
 ---
-title: "유니온 파인드 Union-Find"
+title: '유니온 파인드 Union-Find'
 categories:
   - Algorithm
 tags:
@@ -10,13 +10,11 @@ toc: true
 toc_sticky: true
 ---
 
-
 ## 유니온 파인드(Union-Find)란?
 
 - 서로소 집합 (상호 배타적 집합 => Disjoint Set) : 공통 원소가 없도록 나눈 집합.
- 
-- 유니온 파인드 : 상호 배타적인 부분 집합들로 나눠진 원소들에 대한 정보를 저장하고 조작하는 자료구조
 
+- 유니온 파인드 : 상호 배타적인 부분 집합들로 나눠진 원소들에 대한 정보를 저장하고 조작하는 자료구조
 
 ## 유니온 파인드의 연산
 
@@ -26,8 +24,7 @@ toc_sticky: true
 
 - 찾기(find) : 어떤 원소가 주어질 때 이 원소가 속한 집합을 반환한다.
 
->union, find 이 두 연산을 지원한다고 해서 유니온 파인드라고 부른다.
-
+> union, find 이 두 연산을 지원한다고 해서 유니온 파인드라고 부른다.
 
 ## "배열"로 disjoint set 구현
 
@@ -38,13 +35,12 @@ toc_sticky: true
 
 - 찾기 연산은 배열의 인덱스를 참조하는 방식이기 때문에 O(1)시간에 가능하다.
 
-
 ## "트리"로 disjoint set 구현
 
-배열 구현의 단점을 보완하기 위해서 "트리"라는 자료구조를 생각해낼 수 있다. 트리를 이용하면 합치기 연산이 간단해진다. 
+배열 구현의 단점을 보완하기 위해서 "트리"라는 자료구조를 생각해낼 수 있다. 트리를 이용하면 합치기 연산이 간단해진다.
 연산의 대상이 되는 노드를 찾아 그 노드가 포함된 트리의 루트를 찾아서 하나를 다른 한쪽의 자손으로 넣으면 된다.
 
-배열 구현의 단점을 보완한 것 같지만, 합치기 연산에는 루트를 찾아내는 찾기 연산이 전제된다. 만약 트리를 구성하는 노드가 무수히 많고, 
+배열 구현의 단점을 보완한 것 같지만, 합치기 연산에는 루트를 찾아내는 찾기 연산이 전제된다. 만약 트리를 구성하는 노드가 무수히 많고,
 해당 트리의 높이가 매우 높다면 찾기 연산을 수행하는 데에 있어서 많은 시간이 소요된다. 따라서 배열 구현보다 못한 성능을 가지게 된다.
 
 이러한 문제점을 어떻게 해결할 수 있을까?
@@ -60,7 +56,6 @@ toc_sticky: true
 - 합치기 연산은 a,b원소가 속해있는 집합(루트)을 찾고 둘 중 하나의 집합을 다른 하나의 집합(루트)의 자손으로 저장해준다. -> 집합(루트)을 찾는 과정이 수반되므로 마찬가지로 트리 높이에 비례 O(n)
 
 - 트리를 만듦으로 인해 배열로 구현할 때보다 더 안좋은 성능을 지닌다. 따라서 최적화가 필요하다.
-
 
 ## 최적화
 
@@ -86,14 +81,13 @@ toc_sticky: true
 - 따라서 트리의 높이를 따로 저장해두고 높이가 작은 쪽의 트리를 큰 쪽의 서브트리로 붙이는 방식으로 진행한다.
 
 - 만약 두 원소가 속해있는 트리의 높이가 같다면 높이를 기존의 높이 + 1로 저장해준다.
-	(why? 높이가 같은 두 트리 중 하나가 다른 트리 루트의 자손에 붙여진다면 높이는 기존 트리의 높이 + 1이 되기 때문에..) 
+  (why? 높이가 같은 두 트리 중 하나가 다른 트리 루트의 자손에 붙여진다면 높이는 기존 트리의 높이 + 1이 되기 때문에..)
 
 - 이러한 방식으로 연산을 하면 트리의 높이가 유지되거나 1씩 증가한다 따라서 시간복잡도는 O(n) -> O(log N)이 된다.
 
-
 위에서 살펴본 최적화 방법 말고도 간단하게 구현할 수 있는 최적화 방법이 있다.
 이 최적화를 이용하면 찾기 연산의 시간을 크게 줄일 수 있다. 찾기 연산 수행할 때마다 같은 연산을 반복하게 되는데,
-한번의 찾기 연산 수행시에 부모노드를 저장하는 배열을 만들어 해당 노드의 부모노드가 루트가 되도록 바꿔버리면 다음번에 호출했을 때 바로 찾을 수 있다. 
+한번의 찾기 연산 수행시에 부모노드를 저장하는 배열을 만들어 해당 노드의 부모노드가 루트가 되도록 바꿔버리면 다음번에 호출했을 때 바로 찾을 수 있다.
 
 "경로 압축(path compression) 최적화"
 
@@ -103,13 +97,11 @@ toc_sticky: true
 
 - 평균 시간 O(α(n))이 되는데 α(n)는 아크만 함수이다. 모든 크기 n에 대해 4 이하의 값이다. ---> n이 아무리 커도 상수시간에 해결이 가능하다.
 
-
 ## 성능 분석
 
 위에서 언급한 두가지의 최적화를 모두 적용하면 찾기와 합치기 연산을 많은 횟수로 수행했을 때의 시간 복잡도는 O(⍺(n))이다.
 여기서 ⍺(n)는 아커만 함수라고 하는데 우리가 상상한 모든 크기의 n에 대해 4이하의 값이다.
 예로 ⍺(n)이 5가 되려면 n이 2^65536만큼 커야한다.
-
 
 ## 연습문제
 
@@ -123,62 +115,62 @@ using namespace std;
 int N, M, c, a, b;
 vector<int> parent, level;
 
-int search(int u) 
+int search(int u)
 {
-	if (parent[u] == u) return u;
+ if (parent[u] == u) return u;
 
-	return parent[u] = search(parent[u]);
+ return parent[u] = search(parent[u]);
 }
 
-void merge(int u, int v) 
+void merge(int u, int v)
 {
-	int ru = search(u); int rv = search(v); //root 구하기
-	if (ru == rv) return;
+ int ru = search(u); int rv = search(v); //root 구하기
+ if (ru == rv) return;
 
-	if (level[ru] > level[rv]) 
-		parent[rv] = ru;
+ if (level[ru] > level[rv])
+  parent[rv] = ru;
 
-	else if (level[ru] < level[rv])
-		parent[ru] = rv;
+ else if (level[ru] < level[rv])
+  parent[ru] = rv;
 
-	else
-	{
-		parent[ru] = rv;
-		level[ru]++;
-	}
+ else
+ {
+  parent[ru] = rv;
+  level[ru]++;
+ }
 }
 
-int main() 
+int main()
 {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
+ ios::sync_with_stdio(0);
+ cin.tie(0);
 
-	cin >> N >> M;
-	for (int n = 0; n <= N; n++) 
-	{
-		parent.push_back(n);
-		level.push_back(1);
-	}
-	
-	for (int m = 0; m < M; m++)
-	{
-		cin >> c >> a >> b;
-		if (c==0) //Union
-			merge(a, b);
-		
-		else	  //Find
-		{
-			if (search(a) == search(b))
-				cout << "YES" << '\n';
-			else
-				cout << "NO" << '\n';
-		}
-	}
-	return 0;
+ cin >> N >> M;
+ for (int n = 0; n <= N; n++)
+ {
+  parent.push_back(n);
+  level.push_back(1);
+ }
+
+ for (int m = 0; m < M; m++)
+ {
+  cin >> c >> a >> b;
+  if (c==0) //Union
+   merge(a, b);
+
+  else   //Find
+  {
+   if (search(a) == search(b))
+    cout << "YES" << '\n';
+   else
+    cout << "NO" << '\n';
+  }
+ }
+ return 0;
 }
 ```
 
-
 <br><br>
->참고자료<br>
->프로그래밍 대회에서 배우는 알고리즘 해결 전략 -구종만 저
+
+> 참고자료<br>
+> 프로그래밍 대회에서 배우는 알고리즘 해결 전략 -구종만 저
