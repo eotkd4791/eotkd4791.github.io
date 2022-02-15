@@ -9,30 +9,7 @@
 
 #### AS-IS
 
-```jsx
-const MyInput = ({ name, label, ...rests }) => {
-  return (
-    <InputContainer>
-      <InputLabel htmlFor={name}>{label}</InputLabel>
-      <InputBox
-        id={name}
-        name={name}
-        {...rests}
-      />
-    </InputContainer>
-  );
-}
-
-const MyForm = () => {
-  const { register } = useForm(); // react-hook-form
-
-  return (
-    <form>
-      <MyInput type="password" placeholder="비밀번호" {...register('password')}>
-    </form>
-  )
-}
-```
+<script src="https://gist.github.com/eotkd4791/0b0606054457f63bceb7c59325643120.js"></script>
 
 원인을 파악하기 위해서는 먼저 `register API`가 어떻게 동작하는지 살펴볼 필요가 있다. register 함수는 react-hook-form의 `useForm`의 반환값으로 얻을 수 있다. register 함수에 `input name`을 비롯한 옵션을 파라미터로 하여 호출하면 아래와 같은 값을 반환한다.
 
@@ -47,32 +24,7 @@ const { onChange, onBlur, name, ref } = register('input_name', configOptionObjec
 
 #### TO-BE
 
-```jsx
-const MyInput = React.forwardRef(({ name, label, ...rests }, ref) => {
-  return (
-    <InputContainer>
-      <InputLabel htmlFor={name}>{label}</InputLabel>
-      <InputBox
-        id={name}
-        name={name}
-        ref={ref}
-        {...rests}
-      />
-    </InputContainer>
-  );
-});
-
-const MyForm = () => {
-  const ref = useRef(null);
-  const { register } = useForm(); // react-hook-form
-
-  return (
-    <form>
-      <MyInput type="password" placeholder="비밀번호" {...register('password')}>
-    </form>
-  )
-}
-```
+<script src="https://gist.github.com/eotkd4791/73f9419c24a73d40b43f9573d7e552c9.js"></script>
 
 forwardRef는 prop으로 ref를 전달 받아서 하부 트리 내의 다른 컴포넌트로 전달하는 또 하나의 컴포넌트를 생성하는 역할을 한다.
 
