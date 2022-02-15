@@ -1,5 +1,3 @@
-### [React] react-hook-form 사용시 발생하는 warning
-
 폼 유효성 검사를 위해서 [react-hook-form](https://react-hook-form.com/)를 도입하였고,
 [register API](https://react-hook-form.com/api/useform/register)를 사용하면서 아래와 같은 경고와 마주했다.
 
