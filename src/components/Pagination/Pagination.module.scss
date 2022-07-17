@@ -1,0 +1,51 @@
+@use "sass:color";
+
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.pagination {
+  display: flex;
+  @include margin-top(2);
+
+  .previous {
+    text-align: left;
+    width: 50%;
+
+    .previousLink {
+      color: $color-secondary;
+      font-size: 26px;
+      font-weight: bold;
+
+      &:hover,
+      &:focus {
+        color: $color-primary;
+      }
+
+      &.disable {
+        color: color.adjust($color-gray, $whiteness: 20%);
+        pointer-events: none;
+      }
+    }
+  }
+
+  .next {
+    text-align: right;
+    width: 50%;
+
+    .nextLink {
+      color: $color-secondary;
+      font-size: 26px;
+      font-weight: bold;
+
+      &:hover,
+      &:focus {
+        color: $color-primary;
+      }
+
+      &.disable {
+        color: color.adjust($color-gray, $whiteness: 20%);
+        pointer-events: none;
+      }
+    }
+  }
+}

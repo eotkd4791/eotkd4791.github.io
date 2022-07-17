@@ -1,0 +1,39 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+.tags {
+  @include margin-bottom(0.5);
+
+  .list {
+    list-style: none;
+    @include padding-equal(0);
+
+    .item {
+      display: inline-block;
+      @include margin(0.5, 0.125);
+
+      @include breakpoint-sm {
+        &:first-child {
+          @include margin-left(0);
+          @include padding-left(0);
+        }
+      }
+
+      .link {
+        border: 1px solid $color-gray-border;
+        border-radius: $button-border-radius;
+        color: $color-base;
+        display: inline-block;
+        height: $button-height;
+        line-height: $button-height;
+        text-decoration: none;
+        @include padding(0, 0.75);
+
+        &:hover,
+        &:focus {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
