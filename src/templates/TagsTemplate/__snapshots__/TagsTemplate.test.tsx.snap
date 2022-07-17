@@ -12,7 +12,7 @@ exports[`TagsTemplate renders correctly 1`] = `
           <a
             href="/"
           >
-            John Doe
+            Stef
           </a>
         </h2>
         <p>

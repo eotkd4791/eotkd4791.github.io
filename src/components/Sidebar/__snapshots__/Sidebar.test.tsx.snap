@@ -11,7 +11,7 @@ exports[`Sidebar renders correctly 1`] = `
         <a
           href="/"
         >
-          John Doe
+          Stef
         </a>
       </h1>
       <p>

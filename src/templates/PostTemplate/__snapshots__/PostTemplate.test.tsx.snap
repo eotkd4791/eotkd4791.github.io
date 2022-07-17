@@ -39,7 +39,7 @@ exports[`PostTemplate renders correctly 1`] = `
             target="_blank"
           >
             <strong>
-              John Doe
+              Stef
             </strong>
              on Twitter
           </a>
