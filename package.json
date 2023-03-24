@@ -8,7 +8,7 @@
     "url": "https://github.com/eotkd4791/eotkd4791.github.io/issues"
   },
   "dependencies": {
-    "gatsby": "^2.2.8",
+    "gatsby": "^2.32.13",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-feed": "^2.1.0",
     "gatsby-plugin-google-adsense": "^1.1.3",
@@ -64,7 +64,7 @@
     "gray-matter": "^4.0.2",
     "inquirer": "^6.2.2",
     "prettier": "^1.14.2",
-    "react-dev-utils": "^11.0.4",
+    "react-dev-utils": "^12.0.1",
     "recursive-readdir": "^2.2.2",
     "signale": "^1.3.0"
   },
